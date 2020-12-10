@@ -127,7 +127,7 @@ This step is to create a dvs model which will hold the trained output model.
  3. Fill the fields in Run form and click *Submit* button. See below for sample values to be given in the form, for advanced usage please refer to **Dkube User Guide**.
     - **Basic** tab
 	  - Enter a unique name say *training-pets-detector* 
-	  - Start-up script : `bash process.sh; pip install --user --force-reinstall tf-slim enum34; python model_main.py`
+	  - Start-up script : `bash process.sh; pip install --user --force-reinstall lvis tf-slim enum34; python model_main.py`
 	  - Click *Next*.
 	- **Repos** tab
 	  - *Inputs* section
