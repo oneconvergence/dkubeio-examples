@@ -12,20 +12,19 @@ This example is derived from [retraining](https://www.tensorflow.org/hub/tutoria
  - **classifier/data**: This directory has processed training data. Program trains on this data.
  - **inference**: This directory has compatible test data images which can be used for inference.
  - **hptuning/tuning.yaml**: Sample YAML showing the configuration format and parameters for tuning.
- - **pipeline/catsdogs.py**: Python DSL defining a sample Dkube pipeline. Pipeline uses Dkube components for all stages.
- - **pipeline/catsdogs.ipynb**: Ipython notebook with the code. Upload the file in Dkube notebook and run all the cells. This notebook will generate and trigger the run of pipeline.
+ - **pipeline/dkube-resnet-pipeline.ipynb**: Ipython notebook with the code. Upload the file in Dkube notebook and run all the cells. This notebook will generate and trigger the run of pipeline.
 
 # How to Train
 ## Step1: Create a Project
 
 1. Click Repos side menu option.
-2. Click +Project  button under Projects section.
+2. Click *+Project* button for Dkube version 2.1.x.x or *+Code* for Dkube version 2.2.x.x.
 3. Enter a name say resnet-catsdogs
 4. Enter tag name in Tag text-box
 5. Select Project Source as Git
 6. Paste link https://github.com/oneconvergence/dkubeio-examples/tree/master/tf/classification/resnet/catsdogs/classifier/program in the URL text box
 7. Enter branch name or version in Branch text-box
-8. Click the Add Project button.
+8. Click the Add Project button for Dkube version 2.1.x.x or *Add Code* for Dkube version 2.2.x.x.
 9. Project will be created and imported in Dkube. Progress of import can be seen.
 10. Please wait till status turns to ready.
 
@@ -33,7 +32,7 @@ This example is derived from [retraining](https://www.tensorflow.org/hub/tutoria
 ## Step2: Create a dataset
 1. Click +Datasets button under Datasets section.
 2. Enter a unique name say resnet-catsdogs
-3. Enter tag name in Tag text-box
+3. Enter tag name in Tag text-box, this field is optional.
 4. Select Versioning as DVS 
 5. Select Dataset store as default
 6. Select Dataset Source as Git
@@ -139,17 +138,17 @@ parameters:
 1. Training, Serving & Inference stages explained in above sections can be automated using Dkube pipeline.
 2. Sample pipeline for this example is available under `pipeline/` mentioned in section [directories](#%20Directories).
 
-## How to use catsdogs.ipynb
+## How to use dkube-resnet-pipeline.ipynb
 1. Create project with name catsdogs
 2. Create Dataset with name catsdogs
 3. Create model with name catsdogs
 4. Go to Default Dkube notebook
-5. Then, click the Jupyter icon which will open a UI. Select the catsdogs.ipynb and double click it to open
+5. Then, click the Jupyter icon which will open a UI. Select the dkube-resnet-pipeline.ipynb under pipeline/ipynbs and double click it to open
 6. Fill training_program, training_dataset, training_output_model with proper values
-7. Run all the cells of catsdogs.ipynb. This will create a pipeline, creates an experiment and a run.
+7. Run all the cells of dkube-resnet-pipeline.ipynb This will create a pipeline, creates an experiment and a run.
 8. Links are displayed in the output cells wherever applicable.
 
-## How to use digits.tar.gz
+## How to use dkube_resnetv2_pl.tar.gz
 1. Click *Pipelines* sidemenu option.
 2. Click *+Upload pipeline* and upload this file.
 3. Click *Experiments* sidemenu option.
@@ -158,24 +157,13 @@ parameters:
 6. Select the *pipeline* which was uploaded in *step 2*
 7. Fill in the *Run Parameters* fields.
 
-## How to use catsdogs.py
-1. This DSL definition needs to be compiled first. Following prereqs must be installed.
-```
-python3.5 or greater
-pip install --upgrade "urllib3==1.22" 
-pip install https://storage.googleapis.com/ml-pipeline/release/1.0.0/kfp.tar.gz --upgrade
-```
-2. Use the command below to compile the DSL,
-```dsl-compile --py [path/to/python/file] --output [path/to/output/tar.gz]```
-3. Once the tar ball is generated. Follow the procedure mentioned in [section](##%20How%20to%20use%20catsdogs.tar.gz). 
-
 ## Release Model
-1. Go to the model version and click the ?~@~XRelease Model?~@~Y icon.
+1. Go to the model version and click the Release Model icon.
 2. Once the model is released, it will be available in the Released view of the Models.
 
 ## Publish Model
 1. A model can be published directly from the repo or can be first released and then published.
-2. Go to the model version and click ?~@~XPublish Model?~@~Y icon.
+2. Go to the model version and click Publish Model icon.
 3. Give a name and check the transformer.
    - Edit transformer code field and replace the default test with tf/classification/resnet/catsdogs/transformer/transformer.py
    - Click Submit.
@@ -194,4 +182,13 @@ pip install https://storage.googleapis.com/ml-pipeline/release/1.0.0/kfp.tar.gz 
 9.  Upload the any downloaded file
 10. Click Predict.
 
-
+## Steps for running the program in IDE
+1. Create a IDE with tensorflow framework and version 1.14.
+2. Select the project resnet-catsdogs.
+3. Under Inputs section, in Repos Tab select the dataset resnet-catsdogs and enter mount path /opt/dkube/input.
+4. Create a new notebook inside workspace/resnet-catsdogs/tf/classification/resnet/catsdogs/classifier/program
+   - In first cell type:
+     - %mkdir -p /opt/dkube/output
+     - %rm -rf /opt/dkube/output/*
+   - In 2nd cell type %load model.py in a notebook cell and then run.
+5. Note for running the training more than once please run the 1st cell and then run the 2nd cell.

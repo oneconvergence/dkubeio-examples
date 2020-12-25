@@ -1,12 +1,12 @@
 # MNIST example using PyTorch
 ## Step1: Create a Project
  1. Click *Repos* side menu option.
- 2. Click *+Project button inside the Projects section.
+ 2. Click *+Project* button for Dkube version 2.1.x.x or *+Code* for Dkube version 2.2.x.x.
  3. Select Project source as Git.
  4. Enter a unique name say *mnist-pt*
  5. Paste link *[https://github.com/oneconvergence/dkubeio-examples/tree/master/pytorch/classification/mnist/digits/classifier/program 
  ](https://github.com/oneconvergence/dkubeio-examples/tree/master/pytorch/classification/mnist/digits/classifier/program)* in the URL text box.
- 6. Click *Add Project* button.
+ 6. Click *Add Project* button for Dkube version 2.1.x.x or *Add Code* for Dkube version 2.2.x.x.
  7. Project will be created and imported in Dkube. Progress of import can be seen.
  8. Please wait till status turns to *ready*.
 
@@ -104,3 +104,13 @@
 - Select model mnist from the dropdown.
 - Upload the downloaded image and click predict.
 
+## Steps for running the program in IDE
+1. Create a IDE with pytorch framework and version 1.6.
+2. Select the project mnist-pt.
+3. Under Inputs section, in Repos Tab select dataset mnist-pt and enter mount path /opt/dkube/input.
+4. Create a new notebook inside workspace/mnist-pt/pytorch/classification/mnist/digits/classifier/program
+   - In first cell type:
+     - %mkdir -p /opt/dkube/output
+     - %rm -rf /opt/dkube/output/*
+   - In 2nd cell type %load model.py in a notebook cell and then run.
+5. Note for running the training more than once, please run the cell 1 again.

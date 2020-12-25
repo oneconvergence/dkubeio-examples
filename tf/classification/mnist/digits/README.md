@@ -12,20 +12,19 @@ This example is derived from [tensorflow example](https://github.com/tensorflow/
  - **classifier/data**: This directory has processed training data. Program trains on this data.
  - **inference**: This directory has compatible test data images which can be used for inference.
  - **hptuning/tuning.yaml**: Sample YAML showing the configuration format and parameters for tuning.
- - **pipeline/digits.py**: Python DSL defining a sample Dkube pipeline. Pipeline uses Dkube components for all stages.
- - **pipeline/digits.ipynb**: Ipython notebook with the code. Upload the file in Dkube notebook and run all the cells. This notebook will generate and trigger the run of pipeline.
+ - **pipeline/dkube-mnist-pipeline.ipynb**: Ipython notebook with the code. Upload the file in Dkube notebook and run all the cells. This notebook will generate and trigger the run of pipeline.
 
 # How to Train
 ## Step1: Create a Project
 
 1. Click Repos side menu option.
-2. Click +Project button under Projects section.
+2. Click *+Project* button for Dkube version 2.1.x.x or *+Code* for Dkube version 2.2.x.x.
 3. Enter a name say mnist-digits
 4. Enter tag name in Tag text-box
 5. Select Project Source as Git
 6. Paste link https://github.com/oneconvergence/dkubeio-examples/tree/master/tf/classification/mnist/digits/classifier/program in the URL text box for tensorflow version 1.14 or https://github.com/oneconvergence/dkubeio-examples/tree/master/tf/classification/mnist/digits/classifier/program-2.x for tensorflow version 2.0.
 7. Enter branch name or version in Branch text-box.
-8. Click the Add Project button.
+8. Click the *Add Project* button for Dkube version 2.1.x.x or *Add Code* for Dkube version 2.2.x.x.
 9. Project will be created and imported in Dkube. Progress of import can be seen.
 10. Please wait till status turns to ready.
 
@@ -34,7 +33,7 @@ This example is derived from [tensorflow example](https://github.com/tensorflow/
 1. Click Repos side menu option.
 2. Click +Datasets button under Datasets section.
 3. Enter a unique name say mnist-digits
-4. Enter tag name in Tag text-box and field is optional
+4. Enter tag name in Tag text-box and this field is optional
 5. Select Versioning as DVS 
 6. Select Dataset store as default
 7. Select Dataset Source as Git
@@ -142,22 +141,22 @@ parameters:
 1. Start the default dkube notebook from the IDE tab.
 2. Once running, click the jupyterlab icon to launch jupyterlab.
 3. Go to pipeline/ipynbs.
-4. Double click on digits.ipynb.
+4. Double click on dkube-mnist-pipeline.ipynb.
 5. Run the notebook and create the tar file.
 6. Download the tar file by right clicking on it.
 7. Upload the tar file into the DKube pipeline UI.
 
-## How to use digits.ipynb
+## How to use dkube-mnist-pipeline.ipynb
 1. Create project with name mnist.
 2. Create Dataset with name mnist.
 3. Create model with name mnist.
 4. Go to Default Dkube notebook.
-5. Then, click the Jupyter icon which will open a UI. Select the digits.ipynb and double click it to open.
+5. Then, click the Jupyter icon which will open a UI. Select the dkube-mnist-pipeline.ipynb present under pipeline/ipynbs and double click it to open.
 6. Fill training_program, training_dataset, training_output_model with proper values
-7. Run all the cells of digits.ipynb. This will create a pipeline, creates an experiment and a run.
+7. Run all the cells of dkube-mnist-pipeline.ipynb. This will create a pipeline, creates an experiment and a run.
 8. Links are displayed in the output cells wherever applicable.
 
-## How to use digits.tar.gz
+## How to use dkube_mnist_pl.tar.gz
 1. Click *Pipelines* sidemenu option.
 2. Click *+Upload pipeline* and upload this file.
 3. Click *Experiments* sidemenu option.
@@ -166,24 +165,13 @@ parameters:
 6. Select the *pipeline* which was uploaded in *step 2*
 7. Fill in the *Run Parameters* fields.
 
-## How to use digits.py
-1. This DSL definition needs to be compiled first. Following prereqs must be installed.
-```
-python3.5 or greater
-pip install --upgrade "urllib3==1.22" 
-pip install https://storage.googleapis.com/ml-pipeline/release/1.0.0/kfp.tar.gz --upgrade
-```
-2. Use the command below to compile the DSL,
-```dsl-compile --py [path/to/python/file] --output [path/to/output/tar.gz]```
-3. Once the tar ball is generated. Follow the procedure mentioned in [section](##%20How%20to%20use%20digits.tar.gz). 
-
 ## Release Model
-1. Go to the model version and click the ‘Release Model’ icon.
+1. Go to the model version and click the Release Model icon.
 2. Once the model is released, it will be available in the Released view of the Models.
 
 ## Publish Model
 1. A model can be published directly from the repo or can be first released and then published.
-2. Go to the model version and click ‘Publish Model’ icon.
+2. Go to the model version and click Publish Model icon.
 3. Give a name and check the transformer.
    - Edit transformer code field and replace the default test with tf/classification/mnist/digits/transformer/transformer.py
    - Click Submit.
@@ -202,3 +190,24 @@ pip install https://storage.googleapis.com/ml-pipeline/release/1.0.0/kfp.tar.gz 
 9. Upload the any downloaded file
 10.Click Predict.
 
+## Steps for running the tensorflow 1.14 program in IDE
+1. Create a IDE with tensorflow framework and version 1.14.
+2. Select the project mnist-digits.
+3. Select the dataset mnist-digits and enter mount path /opt/dkube/input
+4. Create a new notebook inside workspace/mnist-digits/tf/classification/mnist/digits/classifier/program
+   - In first cell type:
+     - %mkdir -p /opt/dkube/output
+     - %rm -rf /opt/dkube/output/*
+   - In 2nd cell type %load model.py in a notebook cell and then run.
+5. Note for running the training more than 1 time,please run the cell 1 again.
+
+## Steps for running the tensorflow 2.0 program in IDE
+1. Create a IDE with tensorflow framework and version 2.0
+2. Select the project mnist-digits.
+3. Select the dataset mnist-digits and enter mount path /opt/dkube/input
+4. Create a new notebook inside workspace/mnist-digits/tf/classification/mnist/digits/classifier/program-2.x
+   - In first cell type:
+     - %mkdir -p /opt/dkube/output
+     - %rm -rf /opt/dkube/output/*
+   - In 2nd cell type %load model.py in a notebook cell and then run.
+5. Note for running the training more than 1 time, please run the cell 1 again.

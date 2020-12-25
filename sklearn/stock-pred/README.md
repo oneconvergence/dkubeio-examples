@@ -1,13 +1,13 @@
 # Stock Prediction using :SKlearn
-## Step1: Workspace/Project
+## Step1: Create a Project
 1. Click *Repos* side menu option.
-2. Click *+Project* button under the Projects section.
+2. Click *+Project* button for Dkube version 2.1.x.x or *+Code* for Dkube version 2.2.x.x.
 3. Select source as *Git*.
 4. Enter a unique name say *stock-prediction*
 5. Paste link *[https://github.com/oneconvergence/dkubeio-examples/tree/master/sklearn/stock-pred/model
  ](https://github.com/oneconvergence/dkubeio-examples/tree/master/sklearn/stock-pred/model)* in the URL text box.
 6. Branch: master
-7. Click *Add Project* button.
+7. Click *Add Project* button for Dkube version 2.1.x.x or *Add Code* for Dkube version 2.2.x.x.
 8. Project will be created and imported in Dkube. Progress of import can be seen.
 9. Please wait till status turns to *ready*.
 
@@ -113,4 +113,13 @@ stock-inp.json https://raw.githubusercontent.com/oneconvergence/dkubeio-examples
 9. Upload the CSV file
 10. Click Predict.
 
-
+## Steps for running the program in IDE
+1. Create a IDE with sklearn framework and version 0.23.2.
+2. Select the project stock-prediction.
+3. Under Inputs section, in Repos Tab select dataset google stock and enter mount path /opt/dkube/input.
+4. Create a new notebook inside workspace/stock-pred/stock-pred/model
+   - In first cell type:
+     - %mkdir -p /opt/dkube/output
+     - %rm -rf /opt/dkube/output/*
+   - In 2nd cell type %load train.py in a notebook cell and then run.
+5. Note for running the training more than once, please run the cell 1 again.
