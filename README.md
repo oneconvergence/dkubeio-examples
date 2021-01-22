@@ -58,3 +58,5 @@ Following examples are provided,
  
  [https://github.com/oneconvergence/dkubeio-examples/tree/master/R/classification/mnist/README.md](https://github.com/oneconvergence/dkubeio-examples/tree/master/R/classification/mnist/README.md)
 
+## Arvados-S3 Example
+[https://github.com/oneconvergence/dkubeio-examples/tree/master/arv-examples/README.md](https://github.com/oneconvergence/dkubeio-examples/tree/master/arv-examples/README.md)
