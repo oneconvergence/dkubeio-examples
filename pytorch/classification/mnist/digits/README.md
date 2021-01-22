@@ -69,6 +69,7 @@
 4. Copy token from developer settings and paste into token field.
 5. Select model mnist from the dropdown.
 6. Upload the downloaded image and click predict. 
+7. For inference through curl command use input json path as https://raw.githubusercontent.com/oneconvergence/dkubeio-examples/master/pytorch/classification/mnist/digits/classifier/input_sample/mnist-pt.json 
 
 ## Step7: Release, Publish and Stage or Deploy model
 
