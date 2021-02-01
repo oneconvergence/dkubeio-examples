@@ -52,5 +52,5 @@
  6. Go to https://SETUPURL:32222/inference
  7. Copy the model serving URL from the test inference tab.
  8. Copy the auth token from developer settings,
- 9. Download any .png image from, [https://github.com/oneconvergence/dkube-examples/tree/master/tf/classification/mnist-fs/digits/inference](https://github.com/oneconvergence/dkube-examples/tree/master/tf/classification/mnist-fs/digits/inference) and upload.
+ 9. Download any .png image from, [https://github.com/oneconvergence/dkubeio-examples/tree/master/tf/classification/mnist-fs/digits/inference](https://github.com/oneconvergence/dkubeio-examples/tree/master/tf/classification/mnist-fs/digits/inference) and upload.
  10. Click predict.
