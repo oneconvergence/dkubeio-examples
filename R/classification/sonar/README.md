@@ -5,7 +5,7 @@
 3. Select source as *Git*.
 4. Enter a unique name say *r-examples*
 5. Paste link *[https://github.com/oneconvergence/dkubeio-examples/tree/master/R/classification
- ](https://github.com/oneconvergence/dkube-examples/tree/master/R/classification)* in the URL text box.
+ ](https://github.com/oneconvergence/dkubeio-examples/tree/master/R/classification)* in the URL text box.
 6. Branch: master
 7. Click *Add Code* button.
 8. Code will be created and imported in Dkube. Progress of import can be seen.
