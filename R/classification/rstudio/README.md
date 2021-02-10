@@ -1,6 +1,6 @@
 ## **Steps for running the Mnist Example in R-Studio**
 
-Skip steps 1 and 2, if you have already created a Project and Model based on *[https://github.com/oneconvergence/dkube-examples/blob/master/R/classification/mnist/README.md](https://github.com/oneconvergence/dkube-examples/blob/master/R/classification/mnist/README.md)*
+Skip steps 1 and 2, if you have already created a Project and Model based on *[https://github.com/oneconvergence/dkubeio-examples/blob/master/R/classification/mnist/README.md](https://github.com/oneconvergence/dkube-examples/blob/master/R/classification/mnist/README.md)*
 
 ## Step 1: Create a Code
 1. Click *Repos* side menu option.
