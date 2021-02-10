@@ -142,7 +142,7 @@ This step is to create a dvs model which will hold the trained output model.
 	    - Enter mount path: Enter path say */opt/dkube/output*.
 	    - Click *Next*.
 	  - *Configuration* section
-	    - Parameters upload configuration: Select the pipeline.config file which is stored locally(Download from [https://github.com/oneconvergence/dkube-examples/tree/master/tf/object-detection/pets/program/training/pipeline.config](https://github.com/oneconvergence/dkube-examples/tree/master/tf/object-detection/pets/program/training/pipeline.config))
+	    - Parameters upload configuration: Select the pipeline.config file which is stored locally(Download from [https://github.com/oneconvergence/dkubeio-examples/tree/master/tf/object-detection/pets/program/training/pipeline.config](https://github.com/oneconvergence/dkubeio-examples/tree/master/tf/object-detection/pets/program/training/pipeline.config))
 	    - **Note** : For good inference please change the num_steps to 10000 in pipeline.config file above. This example is configured to run for num_steps=1 currently for demo purpose.
 4. Click *Submit* button.
 5. Check the *Status* field for lifecycle of Training run under *All Runs* section, wait till it shows *complete*.
@@ -175,7 +175,7 @@ After the job is *complete* from above step. The trained model will get generate
 1. **Create a Code in Dkube**
 
     - Code Name : PETS-TF2 
-    - Github url :[https://github.com/oneconvergence/dkube-examples/tree/master/tf/object-detection/pets](https://github.com/oneconvergence/dkube-examples/tree/master/tf/object-detection/pets)
+    - Github url :[https://github.com/oneconvergence/dkubeio-examples/tree/master/tf/object-detection/pets](https://github.com/oneconvergence/dkubeio-examples/tree/master/tf/object-detection/pets)
 
 2. **Create a IDE with the below details**
 
