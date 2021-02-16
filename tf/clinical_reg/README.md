@@ -47,6 +47,8 @@ f. Upload the tar file into the DKube pipeline UI(optional).
 2. Create Notebook 
    - Give a name 
    - Code: regression
+   - Framework : Tensorflow
+   - Framework version : 1.14
    - Datasets: 
          - i.   clinical Mount point: /opt/dkube/input/clinical 
          - ii.  images Mount point: /opt/dkube/input/images 
@@ -65,6 +67,8 @@ i3. Submit
 7. Create training run using workflow.py 
    - Give a name 
    - Code: regression 
+   - Framework : Tensorflow
+   - Framework version : 1.14
    - Startup command: python workflow.py 
    - Datasets: 
         - i.   clinical Mount point: /opt/dkube/input/clinical 
