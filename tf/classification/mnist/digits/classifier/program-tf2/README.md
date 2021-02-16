@@ -96,7 +96,7 @@
 3. Enter a name say mnist-digits
 4. Enter tag name in Tag text-box
 5. Select Source as Git
-6. Paste link https://github.com/oneconvergence/dkube-examples/tree/master/tf/classification/mnist/digits/classifier/program-tf2 in the URL text box for tensorflow version 2.0
+6. Paste link https://github.com/oneconvergence/dkubeio-examples/tree/master/tf/classification/mnist/digits/classifier/program-tf2 in the URL text box for tensorflow version 2.0
 7. Enter branch name or version in Branch text-box.
 8. Click the Add Code button.
 9. Code will be created and imported in Dkube. Progress of import can be seen.
@@ -149,7 +149,7 @@
 
 ## Step5: Serving, inference (without a transformer, only CURL)
 1. Click on Repos tab, navigate to models and then go to mnist-digits model and select version and create a test inference. Don't check transformer.
-2. Download the inp data from https://raw.githubusercontent.com/oneconvergence/dkube-examples/master/tf/classification/mnist/digits/classifier/program-tf2/sample.json
+2. Download the inp data from https://raw.githubusercontent.com/oneconvergence/dkubeio-examples/master/tf/classification/mnist/digits/classifier/program-tf2/sample.json
 3. Go to your test inference, copy curl command and add  -kv after curl, remove --data-raw till the end and append -d @sample.json at the end.
 
 ## Running the example in IDE
