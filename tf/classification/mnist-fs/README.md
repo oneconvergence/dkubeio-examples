@@ -15,7 +15,7 @@
 &nbsp;&nbsp; Source: None 
 4. **Preprocessing job** \
 &nbsp;&nbsp; **Type:** pre-procesing \
-&nbsp;&nbsp; **Docker-image:** docker.io/ocdr/d3-datascience-tf-cpu:v1.14 \
+&nbsp;&nbsp; **Docker-image:** docker.io/ocdr/d3-datascience-tf-cpu:v1.14-x (Note: use the version for x based on the dropdown from a Run when Tensorflow/1.14 is selected) \
 &nbsp;&nbsp; **Script:** python featureset.py --fs mnist-fs \
 &nbsp;&nbsp; **Code:** mnist \
 &nbsp;&nbsp; **Input dataset:** mnist \
