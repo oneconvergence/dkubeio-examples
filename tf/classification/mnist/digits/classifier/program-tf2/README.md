@@ -71,8 +71,8 @@
 ## How to test inference
 1. To test inference open a new tab with link https://< DKUBE_URL:port/inference >
 2. Copy and Paste Dkube OAuth token from Developer Settings present in menu on top right to Authorization
-3. Select Model type as mnist-digits.
-4. Upload an image for inference, images in the inference folder can be used.
+3. Select Model type as mnist.
+4. Upload an image for inference, images in the inference folder (https://github.com/oneconvergence/dkubeio-examples/tree/master/tf/classification/mnist/digits/inference) can be used.
 5. Click predict button and a chart is displayed with probabilities returned by the model.
 
 ## Hyperparameter Tuning
