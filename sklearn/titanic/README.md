@@ -15,7 +15,7 @@
 &nbsp;2. Source: None
 4. **Preprocessing job** \
 &nbsp;1. **Type:** pre-processing \
-&nbsp;2. **Docker-image:** docker.io/ocdr/d3-datascience-tf-cpu:v1.14-2 \
+&nbsp;2. **Docker-image:** docker.io/ocdr/d3-datascience-tf-cpu:v1.14-3 \
 &nbsp;3. **Script:** python featureset.py --fs titanic-fs \
 &nbsp;&nbsp;3.1. titanic is featureset name, the user can change the name. \
 &nbsp;4. **Code:** titanic \
