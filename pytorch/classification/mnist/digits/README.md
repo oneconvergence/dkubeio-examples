@@ -84,22 +84,14 @@
 - Give the publish model name.
 - Click on Transformer checkbox.
 - Change transformer code to pytorch/classification/mnist/digits/classifier/transformer/transformer.py.
-- Check CPU and click on Submit.
-3. *Stage Model*
-- Go to Model catalog and click on published model.
-- Click on the stage icon under ACTIONS column.
-- Enter stage model name and click on CPU and Submit.
-- Model changes to STATE as staged.
-- Check in Model serving tab the staged model appears and wait for the status to running.
-- Staged model can be used to test the prediction.
-4. *Deploy Model*
+3. *Deploy Model*
 - Click on Model catalog and select the published model.
 - Click on the deploy model icon  under ACTIONS column.
 - Enter the deploy model name and select CPU and click Submit.
 - The state changes to deployed.
 - Check in Model Serving and wait for the deployed model to change to running state.
 - Deployed Model can used to test the prediction.
-5. *Inference*
+4. *Inference*
 - Download data sample from *[https://github.com/oneconvergence/dkubeio-examples/tree/master/tf/classification/mnist/digits/inference](https://github.com/oneconvergence/dkubeio-examples/tree/master/tf/classification/mnist/digits/inference)*
 - Open the URL https://<set-up-IP>:32222/inference.
 - Copy the serving endpoint from the Model serving for Staged/Deployed model  and paste it into the serving the URL field.
