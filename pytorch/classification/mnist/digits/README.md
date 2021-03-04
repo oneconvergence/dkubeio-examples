@@ -73,7 +73,7 @@
 ## Inference through Curl Command (works without the transformer)
 1. Use input json path as https://raw.githubusercontent.com/oneconvergence/dkubeio-examples/master/pytorch/classification/mnist/digits/classifier/input_sample/mnist-pt.json 
 
-## Step7: Release, Publish and Stage or Deploy model
+## Step7: Release, Publish and Deploy model
 
 1. *Release Model*
 - Click on model name mnist-pt.
