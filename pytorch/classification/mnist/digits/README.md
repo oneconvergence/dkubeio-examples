@@ -84,6 +84,7 @@
 - Give the publish model name.
 - Click on Transformer checkbox.
 - Change transformer code to pytorch/classification/mnist/digits/classifier/transformer/transformer.py.
+- Click Submit button.
 3. *Deploy Model*
 - Click on Model catalog and select the published model.
 - Click on the deploy model icon  under ACTIONS column.
