@@ -30,14 +30,14 @@ import tensorflow as tf
 import argparse
 
 
-if os.getenv('DKUBE_JOB_CLASS',None) == 'notebook':
-  if not os.path.exists('/opt/dkube/output'):
-    os.makedirs('/opt/dkube/output')
-  DATA_DIR = '/opt/dkube/input'
-  MODEL_DIR = '/opt/dkube/output'
-
-MODEL_DIR = "/opt/dkube/output"
 DATA_DIR = "/opt/dkube/input"
+if os.getenv('DKUBE_JOB_CLASS',None) == 'notebook':
+  if not os.path.exists('model'):
+    os.makedirs('model')
+  MODEL_DIR = 'model'
+else:
+  MODEL_DIR = '/opt/dkube/output'
+ 
 BATCH_SIZE = int(os.getenv('BATCHSIZE',1024))
 EPOCHS = int(os.getenv('EPOCHS', 4))
 num_train_examples = 60000
