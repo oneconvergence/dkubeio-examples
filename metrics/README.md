@@ -85,8 +85,4 @@ These examples are derived from [mlflow examples](https://github.com/mlflow/mlfl
 1. Create a IDE with sklearn framework and version 0.23.2.
 2. Select the code  metrics-example.
 3. Create a new notebook inside workspace/metrics-example/metrics/sklearn
-   - In first cell type:
-     %mkdir -p /opt/dkube/output
-     %rm -rf /opt/dkube/output/*
-   - In 2nd cell type !python train_diabetes.py 0.01 0.01 in a notebook cell and then run.
-4. Note for running the training more than once, please run the cell 1 again.
+   - In a cell type !python train_diabetes.py 0.01 0.01 in a notebook cell and then run.
