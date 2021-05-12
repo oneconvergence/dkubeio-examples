@@ -14,7 +14,7 @@
 2: Project:
 -  Name: Arv-s3
 -  Git URL: https://github.com/oneconvergence/dkubeio-examples/tree/master/arv-examples 
--  Branch: arvados-s3
+-  Branch: master
 
 3: Launch Notebook
 -  Project: Arv-s3
