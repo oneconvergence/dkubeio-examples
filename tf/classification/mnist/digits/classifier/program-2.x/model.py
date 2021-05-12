@@ -33,7 +33,12 @@ tf.compat.v1.disable_eager_execution()
 
 FLAGS = None
 TF_TRAIN_STEPS = int(os.getenv('STEPS',1000))
-MODEL_DIR = "/opt/dkube/output"
+if os.getenv('DKUBE_JOB_CLASS',None) == 'notebook':
+    MODEL_DIR = "model"
+    if not os.path.exists('model'):
+        os.makedirs('model')
+else:
+    MODEL_DIR = "/opt/dkube/output"
 DATA_DIR = "/opt/dkube/input"
 BATCH_SIZE = int(os.getenv('BATCHSIZE', 10))
 EPOCHS = int(os.getenv('EPOCHS', 1))
