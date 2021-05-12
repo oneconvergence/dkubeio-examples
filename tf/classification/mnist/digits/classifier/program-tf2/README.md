@@ -86,7 +86,7 @@
 2. Select the code  mnist-digits.
 3. In Repos Tab, Under Inputs section select the mnist-digits dataset and enter the mount path /opt/dkube/input.
 4. Create a new notebook inside workspace/program-tf2/program/ and type %load model.py in a notebook cell and then run.
-5. Model will be trained and will be available under /opt/dkube/output/1, can be verified by using command !ls /opt/dkube/output/1.
+5. Model will be trained and will be available under model/1, can be verified by using command !ls model/1.
 
 
 ## Tensorflow 2.3 Advanced Example
@@ -157,4 +157,3 @@
 2. Select the code  mnist-digits.
 3. In Repos Tab, Under Inputs section select the mnist-digits dataset and enter the mount path /opt/dkube/input.
 4. Inside workspace/program-tf2/ folder, run all the cells of tf-advanced.ipynb.
-
