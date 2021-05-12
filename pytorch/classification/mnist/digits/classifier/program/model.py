@@ -12,7 +12,12 @@ from torch.utils.tensorboard import SummaryWriter
 import requests
 
 CLASS_FILE = 'class_file/Net.py'
-MODEL_DIR = "/opt/dkube/output"
+if os.getenv('DKUBE_JOB_CLASS',None) == 'notebook':
+    MODEL_DIR = "model"
+    if not os.path.exists('model'):
+        os.makedirs('model')
+else:
+    MODEL_DIR = "/opt/dkube/output"
 DATA_DIR = "/opt/dkube/input"
 BATCH_SIZE = int(os.getenv('BATCHSIZE', 64))
 EPOCHS = int(os.getenv('EPOCHS', 5))
