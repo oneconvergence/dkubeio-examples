@@ -62,7 +62,7 @@ This step is to create a dvs model which will hold the trained output model.
       - Code: Click on + button and select resnet-catsdogs project
       - Container Section
         - Select Framework as tensorflow
-        - Select Framework version 1.14
+        - Select Framework version 2.0
         - Start-up command : python model.py
         - Click Next
    - **Repos Tab**
