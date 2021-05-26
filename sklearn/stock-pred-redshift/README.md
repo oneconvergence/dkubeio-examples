@@ -134,4 +134,4 @@ In tensorboard, the regression fit of stock data can be seen in the tensorboard 
     - version : 0.23.2
  3. In Repos tab under Inputs, select dataset as google-stock and version as pg_internal.
  4. Click on submit.
- 5. Run all the cells of workspace/stock-prediction/sklearn/pipeline/redshift-pipeline.ipynb and this will create a training run, evaluation run and serving.
+ 5. Run all the cells of workspace/stock-prediction/sklearn/stock-pred-redshift/redshift-pipeline.ipynb and this will create a training run, evaluation run and serving.
