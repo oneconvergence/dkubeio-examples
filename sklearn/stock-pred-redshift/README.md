@@ -125,3 +125,13 @@ In tensorboard, the regression fit of stock data can be seen in the tensorboard 
 9.  Change DB_NAME and uncomment cell #r_endpoint, r_database, r_user, r_password
 10. The kernel will restart automatically, click ok and run from cell 2
 
+ ## Pipeline
+ 
+ 1. Create Code Repo, dataset repo and model repo as explained above in steps 1,2 and 3 respectively.
+ 2. Create a jupyterlab ide with Basic details given below :
+    - code repo : stock prediction
+    - framework : sklearn
+    - version : 0.23.2
+ 3. In Repos tab under Inputs, select dataset as google-stock and version as pg_internal.
+ 4. Click on submit.
+ 5. Run all the cells of workspace/stock-prediction/sklearn/pipeline/redshift-pipeline.ipynb and this will create a training run, evaluation run and serving.
