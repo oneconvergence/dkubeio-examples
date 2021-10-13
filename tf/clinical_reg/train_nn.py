@@ -81,14 +81,21 @@ for each_img in val_imgs:
 X2_val = np.asarray(X2_val)
 X2_val = X2_val.reshape(X2_val.shape[0],X2_val.shape[1],X2_val.shape[2],1)
 
-def write_log(callback, names, logs, batch_no):
+'''def write_log(callback, names, logs, batch_no):
     for name, value in zip(names, logs):
         summary = tf.Summary()
         summary_value = summary.value.add()
         summary_value.simple_value = value
         summary_value.tag = name
         callback.writer.add_summary(summary, batch_no)
-        callback.writer.flush()
+        callback.writer.flush()'''
+
+def write_log(writer, names, logs, batch_no):
+    for name, value in zip(names, logs):
+        with writer.as_default():
+            tf.summary.scalar(name, value, batch_no)
+            writer.flush()
+
 
 def build_cnn_block(img_input_shape, penalty):
     cnn_input = k.layers.Input(shape=img_input_shape, name='img_input')
@@ -140,8 +147,7 @@ if __name__== "__main__":
     train_names = ['train_loss', 'train_mae', 'train_r2']
     val_names = ['val_loss', 'val_mae', 'val_r2']
     
-    callback = TensorBoard(log_path)
-    callback.set_model(model)
+    writer = tf.summary.create_file_writer(log_path)
     no_of_pass = int(len(X2_train)/step)
     pass_count = 1
     for each_epoch in range(epochs):
@@ -155,12 +161,12 @@ if __name__== "__main__":
             logs = model.train_on_batch(x=[x2, x1], y= y)
             train_preds = model.predict([x2, x1])
             logs.append(r2_score(y, train_preds))
-            write_log(callback, train_names, logs, each_epoch)
+            write_log(writer, train_names, logs, each_epoch)
 
             val_logs = model.test_on_batch(x=[X2_val,X1_val], y= Y_val)
             val_preds = model.predict([X2_val,X1_val])
             val_logs.append(r2_score(Y_val, val_preds))
-            write_log(callback, train_names, val_logs, each_epoch)
+            write_log(writer, train_names, val_logs, each_epoch)
             idx = each_pass*step
             train_metrics.append(logs)
             val_metrics.append(val_logs)
@@ -189,12 +195,4 @@ if __name__== "__main__":
         version = 1
     else:
         version = max(saved_models) + 1
-    model.save(export_path + 'weights.h5')
-    tf.keras.backend.set_learning_phase(0)  # Ignore dropout at inference
-    with tf.keras.backend.get_session() as sess:
-        tf.saved_model.simple_save(
-            sess,
-            export_path + str(version),
-            inputs={t.name: t for t in model.inputs},
-            outputs={'output': model.output})
-    print("Model saved, version = ", version)
+    model.save(export_path + str(version))

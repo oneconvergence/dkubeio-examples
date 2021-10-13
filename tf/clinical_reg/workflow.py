@@ -236,8 +236,6 @@ data = data.fillna(0)
 # In[6]:
 
 
-# x_vars = ['age_at_initial_pathologic_diagnosis', 'days_to_birth', 'karnofsky_performance_score']
-# sns.pairplot(data, x_vars=x_vars, y_vars='days_to_death', height=5, aspect=1)
 
 
 # ## 1.2 - Data Preprocessing and visualization
@@ -265,7 +263,6 @@ data.to_csv(outfile, index = 0)
 # In[8]:
 
 
-# sns.pairplot(data, x_vars=x_vars, y_vars='days_to_death', height=5, aspect=1)
 
 
 # # 2 - Splitting data into train, validation and test
@@ -417,17 +414,22 @@ for lr in lrs:
 
 # ## 3.3 Saving Model
 
-# In[ ]:
+# In[12]:
 
 
 version = 1
-model.save(modeldir + 'weights.h5')
-tf.keras.backend.set_learning_phase(0)  # Ignore dropout at inference
-with tf.keras.backend.get_session() as sess:
-    tf.saved_model.simple_save(
-        sess,
-        modeldir + str(version),
-        inputs={t.name: t for t in model.inputs},
-        outputs={'output': model.output})
-print("Model saved, version = ", version)
+model.save(modeldir + str(1))
+
+
+# ## 3.4 - Comparison of models on MAE
+
+# In[13]:
+
+
+metrics = pd.DataFrame.from_dict(metrics)
+metrics['Learning rate idx'] = [0,1,2,3]
+x_vars = ['train_mae', 'val_mae', 'test_mae']
+
+
+
 

@@ -48,7 +48,7 @@ f. Upload the tar file into the DKube pipeline UI(optional).
    - Give a name 
    - Code: regression
    - Framework : Tensorflow
-   - Framework version : 1.14
+   - Framework version : 2.3
    - Datasets: 
          - i.   clinical Mount point: /opt/dkube/input/clinical 
          - ii.  images Mount point: /opt/dkube/input/images 
@@ -60,8 +60,8 @@ i3. Submit
    - Upload it into Juyterlab. 
    - Make changes in py file, comment/remove the following line numbers: 
         -i. 239-240
-        ii. 268 
-        iii. 435-end 
+        -ii. 268 
+        -iii. 435-end 
   -  Save and commit the workflow.py
 6. Create a model named workflow with source none.
 7. Create training run using workflow.py 
