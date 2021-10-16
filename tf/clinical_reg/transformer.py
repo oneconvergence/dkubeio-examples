@@ -46,7 +46,7 @@ class ImageTransformer(kfserving.KFModel):
         img = cv2.resize(img, (28,28))
         img = img.reshape(1,img.shape[0],img.shape[1],1)
         payload = {
-            "inputs": {'csv_input:0': csv.tolist(),'img_input:0': img.tolist()}, "token":inputs['token']
+            "inputs": {'csv_input': csv.tolist(),'img_input': img.tolist()}, "token":inputs['token']
         }
         return payload
     
