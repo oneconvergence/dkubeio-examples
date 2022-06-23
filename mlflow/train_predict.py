@@ -74,7 +74,7 @@ parser.add_argument("--train_steps", default=1000, type=int, help="number of tra
 
 
 def main(argv):
-    run_id = m.create_run(code='mlflow-repo', output='mlflow-repo-tf')
+    run_id = m.create_run(code='mlflow', output='mlflow')
     os.environ["MLFLOW_S3_ENDPOINT_URL"] = f"http://dkube-minio-server.dkube-infra:9000"
     with mlflow.start_run(run_id):
         args = parser.parse_args(argv[1:])
