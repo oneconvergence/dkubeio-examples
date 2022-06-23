@@ -30,7 +30,9 @@ RUN mvn --batch-mode dependency:copy -Dartifact=org.mlflow:mlflow-scoring:1.26.1
 RUN cp /opt/java/mlflow-scoring-1.26.1.pom /opt/java/pom.xml
 RUN cd /opt/java && mvn --batch-mode dependency:copy-dependencies -DoutputDirectory=/opt/java/jars
 
-COPY model /opt/ml/model
+ARG MODEL_PATH
+COPY $MODEL_PATH/model /opt/ml/model
+
 RUN echo 'import yaml\n\
 with open(r"/opt/ml/model/conda.yaml") as file:\n\
     f = yaml.load(file, Loader=yaml.FullLoader)\n\
