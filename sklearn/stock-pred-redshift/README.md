@@ -85,30 +85,27 @@ In tensorboard, the regression fit of stock data can be seen in the tensorboard 
 9.  Upload the CSV file
 10. Click Predict. 
 
-##  Release, Publish and deploy model
+##  Publish and deploy model
 
-1.  Go to the model stock-pred and click on Release model icon under ACTIONS
-2.  Click Release button in the Release Model popup
-3.  Model goes to released stage
-4.  Click on Publish Model icon under ACTIONS column
-5.  Give the publish model name
-6.  Click on Transformer checkbox
-7.  Make sure Serving and Transformer image is sklearn image. It will get filled automatically
+1.  Click on Publish Model icon under ACTIONS column
+2.  Give the publish model name
+3.  Click on Transformer checkbox
+4.  Make sure Serving and Transformer image is sklearn image. It will get filled automatically
     - Select Code stock-prediction.
     - Edit transformer code field and replace the default test with sklearn/stock-pred-redshift/model/transformer.py
-8.  Click on Submit button
-9.  Once model is published, go to Model catalog and click on published model
-10. Click on the stage icon under ACTIONS column
-11. Enter stage model name and click on CPU and Submit
-12. Model changes to STATE as staged
-13. Check in Model serving tab the staged model appears and wait for the status to running
-14. Staged model can be used to test the prediction
-15. Click on Model catalog and select the published model
-16. Click on the deploy model icon  under ACTIONS column
-17. Enter the deploy model name and select CPU and click Submit
-18. The state changes to deployed
-19. Go to Model Serving and wait for the deployed model to change to running state
-20. Copy the URL and open the inference as mentioned from 5th point in Inference section above.
+5.  Click on Submit button
+6.  Once model is published, go to Model catalog and click on published model
+7. Click on the stage icon under ACTIONS column
+8. Enter stage model name and click on CPU and Submit
+9. Model changes to STATE as staged
+10. Check in Model serving tab the staged model appears and wait for the status to running
+11. Staged model can be used to test the prediction
+12. Click on Model catalog and select the published model
+13. Click on the deploy model icon  under ACTIONS column
+14. Enter the deploy model name and select CPU and click Submit
+15. The state changes to deployed
+16. Go to Model Serving and wait for the deployed model to change to running state
+17. Copy the URL and open the inference as mentioned from 5th point in Inference section above.
 
 
 ## Notebook Workflow
