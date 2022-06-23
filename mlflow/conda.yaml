@@ -1,0 +1,12 @@
+name: tensorflow-example
+channels:
+  - conda-forge
+dependencies:
+  - python=3.7
+  - pip
+  - pip:
+    - mlflow
+    - tensorflow==2.0.0
+    - protobuf==3.19.4
+    - git+https://github.com/oneconvergence/dkube.git@3.3.mp
+    - boto3
