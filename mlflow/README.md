@@ -1,5 +1,9 @@
 Example taken from https://github.com/mlflow/mlflow/tree/master/examples/tensorflow/tf2
 
+### Setup
+1. Create a code named mlflow with url- https://github.com/oneconvergence/dkubeio-examples.git branch -mlflow
+2. Create a model with name mlflow
+
 ### Traning
 1. wget https://repo.anaconda.com/miniconda/Miniconda3-py37_4.12.0-Linux-x86_64.sh
 2. bash Miniconda3-py37_4.12.0-Linux-x86_64.sh
