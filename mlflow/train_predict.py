@@ -69,15 +69,18 @@ def eval_input_fn(features, labels, batch_size):
 mlflow.tensorflow.autolog()
 
 parser = argparse.ArgumentParser()
+parser.add_argument("--code", required=True, help="input code name")
+parser.add_argument("--dataset", help="input dataset name")
+parser.add_argument("--output", required=True, help="output model name")
+
 parser.add_argument("--batch_size", default=100, type=int, help="batch size")
 parser.add_argument("--train_steps", default=1000, type=int, help="number of training steps")
 
 
 def main(argv):
-    run_id = m.create_run(code='mlflow', output='mlflow')
-    os.environ["MLFLOW_S3_ENDPOINT_URL"] = f"http://dkube-minio-server.dkube-infra:9000"
+    args = parser.parse_args(argv[1:])
+    run_id = m.create_run(code=args.code, output=args.output)
     with mlflow.start_run(run_id):
-        args = parser.parse_args(argv[1:])
 
         # Fetch the data
         (train_x, train_y), (test_x, test_y) = load_data()
