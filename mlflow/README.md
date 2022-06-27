@@ -11,7 +11,7 @@ Example taken from https://github.com/mlflow/mlflow/tree/master/examples/tensorf
 4. source ~/miniconda3/etc/profile.d/conda.sh
 5. conda env create -f conda.yaml
 6. conda activate tensorflow-example
-7. python train_predict.py
+7. python train_predict.py --code {code name} --output {output model name}
 
 ### Deployment
 1. Serving Port: 8000
