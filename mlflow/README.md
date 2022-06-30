@@ -24,3 +24,12 @@ Example taken from https://github.com/mlflow/mlflow/tree/master/examples/tensorf
 3. Serving Url Prefix: /invocations
 4. Min CPU/Max CPU: 1
 5. Min Memory/Max Memory: 5G
+
+### Prediction
+1. Copy the curl command from the deployment page
+2. Change the data section to
+-d '{
+    "columns": ["SepalLength", "SepalWidth", "PetalLength", "PetalWidth"],
+    "data": [[5.1, 3.3, 1.7, 0.5], [5.9, 3.0, 4.2, 1.5], [6.9, 3.1, 5.4, 2.1]]
+}'
+
