@@ -5,12 +5,11 @@ Example taken from https://github.com/mlflow/mlflow/tree/master/examples/tensorf
 2. Create an output model 
 
 ### Traning
-1. wget https://repo.anaconda.com/miniconda/Miniconda3-py37_4.12.0-Linux-x86_64.sh
-2. bash Miniconda3-py37_4.12.0-Linux-x86_64.sh
-3. source ~/miniconda3/etc/profile.d/conda.sh
-4. conda env create -f conda.yaml
-5. conda activate tensorflow-example
-6. python train_predict.py --code {code name} --output {output model name}
+1. Use tensorflow 2.6.0 cpu image
+2. cd to the code directory where we have the conda.yaml file
+3. conda env create -f conda.yaml
+4. conda activate tensorflow-example
+5. python train_predict.py --code {code name} --output {output model name}
 
 ### Building Image
 1. Go to the model details page which was given as output in the above training run. A new version will be there in the version list.
