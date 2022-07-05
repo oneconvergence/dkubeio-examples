@@ -1,4 +1,4 @@
-from models.prediction import TreeModel
+from prediction import TreeModel
 from dkube.sdk import mlflow as m
 import argparse
 import sys
