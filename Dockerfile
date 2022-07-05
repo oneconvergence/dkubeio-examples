@@ -26,7 +26,7 @@ RUN cd /opt/java && mvn --batch-mode dependency:copy-dependencies -DoutputDirect
 
 
 ARG MODEL_PATH
-COPY $MODEL_PATHdecision-tree-classifier/ /opt/ml/model
+COPY $MODEL_PATH/decision-tree-classifier/ /opt/ml/model
 RUN echo 'import yaml\n\
 with open(r"/opt/ml/model/conda.yaml") as file:\n\
     f = yaml.load(file, Loader=yaml.FullLoader)\n\
