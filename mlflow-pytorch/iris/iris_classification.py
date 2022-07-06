@@ -20,10 +20,10 @@ class IrisClassifier(nn.Module):
         self.fc3 = nn.Linear(10, 3)
 
     def forward(self, x):
-        x = F.relu(self.fc1(x))
-        x = F.relu(self.fc2(x))
-        x = F.dropout(x, 0.2)
-        x = self.fc3(x)
+        x = F.relu(self.fc1(x.double()))
+        x = F.relu(self.fc2(x.double()))
+        x = F.dropout(x.double(), 0.2)
+        x = self.fc3(x.double())
         return x
 
 
@@ -53,7 +53,7 @@ def train_model(model, epochs, X_train, y_train):
     optimizer = torch.optim.Adam(model.parameters(), lr=0.01)
 
     for epoch in range(epochs):
-        out = model(X_train)
+        out = model(X_train.double())
         loss = criterion(out, y_train).to(device)
         optimizer.zero_grad()
         loss.backward()
@@ -68,7 +68,7 @@ def train_model(model, epochs, X_train, y_train):
 def test_model(model, X_test, y_test):
     model.eval()
     with torch.no_grad():
-        predict_out = model(X_test)
+        predict_out = model(X_test.double())
         _, predict_y = torch.max(predict_out, 1)
 
         print("\nprediction accuracy", float(accuracy_score(y_test.cpu(), predict_y.cpu())))
@@ -87,6 +87,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     model = IrisClassifier()
+    model.double()
     model = model.to(device)
     X_train, X_test, y_train, y_test, target_names = prepare_data()
     scripted_model = torch.jit.script(model)  # scripting the model
