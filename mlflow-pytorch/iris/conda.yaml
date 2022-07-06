@@ -1,3 +1,4 @@
+name: pytorch-example
 channels:
 - conda-forge
 dependencies:
@@ -9,3 +10,5 @@ dependencies:
   - boto3
   - torchvision>=0.9.1
   - torch>=1.9.0
+  - git+https://github.com/oneconvergence/dkube.git@3.3.mp
+  - mlflow
