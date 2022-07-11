@@ -1,7 +1,7 @@
 Example taken from https://github.com/mlflow/mlflow/tree/master/examples/tensorflow/tf2
 
 ### Setup
-1. Create a code with url- https://github.com/rahul-179/dkubeio-examples/tree/mlflow/mlflow branch -mlflow
+1. Create a code with url- https://github.com/rahul-179/dkubeio-examples/tree/mlflow/mlflow branch `rm-mlflow`
 2. Create an output model 
 
 ### Traning
