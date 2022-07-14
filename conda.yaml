@@ -1,4 +1,4 @@
-name: sklearn-cancer-prediction
+name: multiplan-sklearn-demo
 channels:
   - defaults
 dependencies:
@@ -11,6 +11,9 @@ dependencies:
     - scikit-plot==0.3.7
     - matplotlib==3.2.1
     - seaborn==0.10.1
-    - git+https://github.com/oneconvergence/dkube.git@3.3.mp
     - protobuf==3.19.4
     - boto3  
+variables:
+  MLFLOW_TRACKING_INSECURE_TLS: "true"
+  MLFLOW_TRACKING_URI: "<https://<ip>:32222>"
+  MLFLOW_TRACKING_TOKEN: "<Token>"  

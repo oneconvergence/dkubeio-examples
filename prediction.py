@@ -53,7 +53,7 @@ class TreeModel:
         :return: MLflow Tuple (experiment_id, run_id)
         """
 
-        with mlflow.start_run(run_id=run_name) as run:
+        with mlflow.start_run(run_name=run_name) as run:
 
             # get current run and experiment id
             run_id = run.info.run_uuid
