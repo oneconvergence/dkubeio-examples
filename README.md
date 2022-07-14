@@ -4,7 +4,7 @@ This example is a modified version of https://github.com/saurabh2mishra/mlflow-d
 
 ## Training
 1. Install Conda v4.9 or latest
-2. CLone this repo and update the conda.yaml file
+2. Clone this repo and update the conda.yaml file
 3. conda env create -f conda.yaml
 4. conda activate multiplan-sklearn-demo
 5. python model_run.py
