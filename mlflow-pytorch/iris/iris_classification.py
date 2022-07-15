@@ -4,7 +4,6 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import os
-from dkube.sdk import mlflow as m
 from sklearn.datasets import load_iris
 from sklearn.metrics import accuracy_score
 from sklearn.model_selection import train_test_split
@@ -80,9 +79,6 @@ if __name__ == "__main__":
     parser.add_argument(
         "--epochs", type=int, default=100, help="number of epochs to run (default: 100)"
     )
-    parser.add_argument("--code", required=True, help="input code name")
-    parser.add_argument("--dataset", help="input dataset name")
-    parser.add_argument("--output", required=True, help="output model name")
 
     args = parser.parse_args()
 
@@ -94,8 +90,7 @@ if __name__ == "__main__":
     scripted_model = train_model(scripted_model, args.epochs, X_train, y_train)
     test_model(scripted_model, X_test, y_test)
 
-    run_id= m.create_run(code=args.code, output=args.output)
-    with mlflow.start_run(run_id) as run:
+    with mlflow.start_run() as run:
         mlflow.pytorch.log_model(scripted_model, "model")  # logging scripted model
         model_path = mlflow.get_artifact_uri("model")
         loaded_pytorch_model = mlflow.pytorch.load_model(model_path)  # loading scripted model

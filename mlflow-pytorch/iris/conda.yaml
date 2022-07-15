@@ -10,5 +10,8 @@ dependencies:
   - boto3
   - torchvision>=0.9.1
   - torch>=1.9.0
-  - git+https://github.com/oneconvergence/dkube.git@3.3.mp
   - mlflow
+variables:
+  MLFLOW_TRACKING_INSECURE_TLS: "true"
+  MLFLOW_TRACKING_URI: "<https://<ip>:32222>"
+  MLFLOW_TRACKING_TOKEN: "<Token>" 

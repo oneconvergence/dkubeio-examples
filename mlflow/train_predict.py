@@ -9,7 +9,6 @@ import tempfile
 import tensorflow as tf
 from tensorflow import estimator as tf_estimator
 import mlflow.tensorflow
-from dkube.sdk import mlflow as m
 import os
 
 TRAIN_URL = "http://download.tensorflow.org/data/iris_training.csv"
@@ -69,9 +68,6 @@ def eval_input_fn(features, labels, batch_size):
 mlflow.tensorflow.autolog()
 
 parser = argparse.ArgumentParser()
-parser.add_argument("--code", required=True, help="input code name")
-parser.add_argument("--dataset", help="input dataset name")
-parser.add_argument("--output", required=True, help="output model name")
 
 parser.add_argument("--batch_size", default=100, type=int, help="batch size")
 parser.add_argument("--train_steps", default=1000, type=int, help="number of training steps")
@@ -79,8 +75,7 @@ parser.add_argument("--train_steps", default=1000, type=int, help="number of tra
 
 def main(argv):
     args = parser.parse_args(argv[1:])
-    run_id = m.create_run(code=args.code, output=args.output)
-    with mlflow.start_run(run_id):
+    with mlflow.start_run():
 
         # Fetch the data
         (train_x, train_y), (test_x, test_y) = load_data()
@@ -181,4 +176,3 @@ def main(argv):
 
 if __name__ == "__main__":
     main(sys.argv)
-
