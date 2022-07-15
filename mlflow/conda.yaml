@@ -8,5 +8,8 @@ dependencies:
     - mlflow
     - tensorflow==2.0.0
     - protobuf==3.19.4
-    - git+https://github.com/oneconvergence/dkube.git@3.3.mp
     - boto3
+variables:
+  MLFLOW_TRACKING_INSECURE_TLS: "true"
+  MLFLOW_TRACKING_URI: "<https://<ip>:32222>"
+  MLFLOW_TRACKING_TOKEN: "<Token>" 
