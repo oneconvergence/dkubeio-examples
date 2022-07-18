@@ -20,8 +20,8 @@ eg: mlflow artifacts  download -r c263bdaa-9505-4dd5-81fa-f9dbf40190fc -d ./outp
 2. Update the conda.yaml file in the downloaded path and add protobuf==3.19.4 in pip dependenicies
 3. Run the below command to build the image
 ```
-mlflow models build-docker -n <image-name> -m <local-path>/decision-tree-classifier
-eg: mlflow models build-docker -n lucifer001/mlflow-pytorch-demo:demo1 -m output/decision-tree-classifier
+mlflow models build-docker -n <image-name> -m <path to the directory conatining MLModel file>
+eg: mlflow models build-docker -n lucifer001/mlflow-pytorch-demo:demo1 -m output/model
 ```
 4.Push the image
 
@@ -35,4 +35,4 @@ eg: mlflow models build-docker -n lucifer001/mlflow-pytorch-demo:demo1 -m output
 ### Prediction
 1. Copy the curl command from the deployment page and append --insecure
 2. Change the data section to
---data-raw '{ "instances": [4.4, 3, 1.3, 0.2]  
+--data-raw '{ "instances": [4.4, 3, 1.3, 0.2] }'
