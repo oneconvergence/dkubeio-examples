@@ -14,8 +14,8 @@ Example taken from https://github.com/mlflow/mlflow/tree/master/examples/pytorch
 1. Install Conda v4.9 or latest
 2. Clone this repo and update the conda.yaml file
 3. conda env create -f conda.yaml
-4. conda activate tensorflow-example
-5. python train_predict.py
+4. conda activate pytorch-example
+5. python iris_classification.py
 
 ## Building Image outside dkube
 1. Download the model to local directory
