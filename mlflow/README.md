@@ -5,7 +5,7 @@ Example taken from https://github.com/mlflow/mlflow/tree/master/examples/tensorf
 
 ### Traning from VS code
 1. Create a vs code IDE with tensorflow 2.6.0 cpu image
-2. cd to the code directory where we have the conda.yaml file and remove variables section
+2. cd to the code directory where we have the conda.yaml file and update conda.yaml.
 3. conda env create -f conda.yaml
 4. conda activate tensorflow-example
 5. python train_predict.py
