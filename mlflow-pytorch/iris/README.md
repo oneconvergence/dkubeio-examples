@@ -2,14 +2,20 @@ Example taken from https://github.com/mlflow/mlflow/tree/master/examples/pytorch
 
 ### Setup
 1. Create a code with url- https://github.com/rahul-179/dkubeio-examples/tree/mlflow/mlflow branch `rm-mlflow`
-2. Create an output model 
 
-### Traning
+### Traning from VS code
 1. Create a vs code IDE with pytorch 1.6 cpu image
 2. cd to the code directory where we have the conda.yaml file
 3. conda env create -f conda.yaml
 4. conda activate pytorch-example
 5. python iris_classification.py
+
+## Training outside VS code
+1. Install Conda v4.9 or latest
+2. Clone this repo and update the conda.yaml file
+3. conda env create -f conda.yaml
+4. conda activate tensorflow-example
+5. python train_predict.py
 
 ## Building Image outside dkube
 1. Download the model to local directory
