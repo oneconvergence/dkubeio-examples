@@ -4,7 +4,20 @@ Example taken from https://github.com/mlflow/mlflow/tree/master/examples/tensorf
 1. Create a code with url- https://github.com/rahul-179/dkubeio-examples/tree/mlflow/mlflow branch `rm-mlflow`
 2. Create an output model 
 
-### Traning from VS code
+### Training from VS code inside DKube
+1. curl https://pyenv.run | bash
+2. exec "$SHELL"
+3. export PATH=$HOME/.pyenv/bin:$PATH
+4. pyenv install 3.7.2
+5. source $HOME/.pyenv/versions/env/bin/activate
+6. pip install --upgrade pip
+7. pip install -r requirements.txt
+8. export MLFLOW_TRACKING_INSECURE_TLS="true"
+9. export MLFLOW_TRACKING_URI="<https://<ip>:32222>"
+10. export MLFLOW_TRACKING_TOKEN="<Token>" 
+11. python train_predict.py
+
+### Traning from VS code outside DKube
 1. Create a vs code IDE with tensorflow 2.6.0 cpu image
 2. cd to the code directory where we have the requirements.txt file
 3. pip3 install virtualenv
@@ -16,7 +29,9 @@ Example taken from https://github.com/mlflow/mlflow/tree/master/examples/tensorf
 9. . env/bin/activate
 10. pip3 install -r requirements.txt
 11. python train_predict.py
-
+    
+`Note: Python 3.7 or higher version is required`
+    
 ## Building Image outside dkube
 1. Download the model to local directory
 ```
