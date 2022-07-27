@@ -5,20 +5,25 @@ Example taken from https://github.com/mlflow/mlflow/tree/master/examples/tensorf
 2. Create an output model 
 
 ### Training from VS code inside DKube
-1. curl https://pyenv.run | bash
-2. exec "$SHELL"
-3. export PATH=$HOME/.pyenv/bin:$PATH
-4. pyenv install 3.7.2
-5. source $HOME/.pyenv/versions/env/bin/activate
-6. pip install --upgrade pip
-7. pip install -r requirements.txt
-8. export MLFLOW_TRACKING_INSECURE_TLS="true"
-9. export MLFLOW_TRACKING_URI="<https://<ip>:32222>"
-10. export MLFLOW_TRACKING_TOKEN="<Token>" 
-11. python train_predict.py
+1. Create a vs code IDE with tensorflow 2.6.0 cpu image
+2. cd to the code directory where we have the requirements.txt file
+3. sudo apt-get update -y; sudo apt-get install -y make build-essential libssl-dev zlib1g-dev \
+libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev \
+libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python-openssl
+4. curl https://pyenv.run | bash
+5. exec "$SHELL"
+6. export PATH=$HOME/.pyenv/bin:$PATH
+7. pyenv install 3.7.2
+8. pyenv virtualenv 3.7.2 env
+9. source $HOME/.pyenv/versions/env/bin/activate
+10. pip install --upgrade pip
+11. pip install -r requirements.txt
+12. export MLFLOW_TRACKING_INSECURE_TLS="true"
+13. export MLFLOW_TRACKING_URI="<https://<ip>:32222>"
+14. export MLFLOW_TRACKING_TOKEN="<Token>" 
+15. python train_predict.py
 
 ### Traning from VS code outside DKube
-1. Create a vs code IDE with tensorflow 2.6.0 cpu image
 2. cd to the code directory where we have the requirements.txt file
 3. pip3 install virtualenv
 4. export PATH=$PATH:$HOME/.local/bin
