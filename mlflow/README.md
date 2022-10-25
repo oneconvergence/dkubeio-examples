@@ -2,14 +2,13 @@ Example taken from https://github.com/mlflow/mlflow/tree/master/examples/tensorf
 
 ### Setup
 1. Create a code with url- https://github.com/oneconvergence/dkubeio-examples/tree/mlflow/mlflow branch -mlflow
-2. Create an output model 
 
 ### Training with Conda environment
 1. Create a vs code IDE with tensorflow 2.6.0 cpu image
-2. cd to the code directory where we have the conda.yaml file
+2. cd to the code directory where we have the conda.yaml file and update conda.yaml.
 3. conda env create -f conda.yaml
 4. conda activate tensorflow-example
-5. python train_predict.py --code {code name} --output {output model name}
+5. python train_predict.py
 
 ### Training from VS code inside DKube
 1. Create a vs code IDE with tensorflow 2.6.0 cpu image
@@ -62,6 +61,20 @@ eg: mlflow artifacts  download -r c263bdaa-9505-4dd5-81fa-f9dbf40190fc -d ./outp
 ```
 mlflow models build-docker -n <image-name> -m <local-path>/decision-tree-classifier
 eg: mlflow models build-docker -n lucifer001/mlflow-sklearn-demo:demo1 -m output/decision-tree-classifier
+```
+4.Push the image
+
+## Building Image outside dkube
+1. Download the model to local directory
+```
+mlflow artifacts  download -r <run-id> -d <local-path>
+eg: mlflow artifacts  download -r c263bdaa-9505-4dd5-81fa-f9dbf40190fc -d ./output
+```
+2. Update the conda.yaml file in the downloaded path and add protobuf==3.19.4 in pip dependenicies
+3. Run the below command to build the image
+```
+mlflow models build-docker -n <image-name> -m <path to the directory conatining MLModel file>
+eg: mlflow models build-docker -n lucifer001/mlflow-sklearn-demo:demo1 -m output/model
 ```
 4.Push the image
 
