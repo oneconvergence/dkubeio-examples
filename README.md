@@ -34,7 +34,7 @@ Following examples are provided,
 
 - Clinical Regression pipeline demo.
   
-  [https://github.com/oneconvergence/dkubeio-examples/tree/master/tf/clinical_reg/README.md](https://github.com/oneconvergence/dkube-examples/tree/master/tf/clinical_reg/README.md)
+  [https://github.com/oneconvergence/dkubeio-examples/blob/master/tf/clinical_reg/README.md](https://github.com/oneconvergence/dkubeio-examples/blob/master/tf/clinical_reg/README.md)
 
 ## Pytorch Examples
 
