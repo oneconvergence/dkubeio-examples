@@ -3,7 +3,7 @@ This example is a modified version of https://github.com/saurabh2mishra/mlflow-d
 - Modify conda.yaml to have correct version of protobuf.
 
 ## Training
-1. Install Conda v4.9 or latest
+1. Install Conda v4.9 or latest.
 2. Clone this repo and update the conda.yaml file
 3. conda env create -f conda.yaml
 4. conda activate multiplan-sklearn-demo
